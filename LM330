@@ -1,0 +1,57 @@
+#HOMEWORK - Add a checkout function to your online store
+
+#For Loop
+#While Loop
+
+while True:
+    print("Welcome to Rhyse's Cookie Stand")
+    print("Here are our options:")
+    print("A - Chocolate Chips   B - Sugar Cookie   C - Sugar-Free Cookie   D - Mint Chocolate Cookies")
+    orderInput = input("What kind of cookies do you want?")
+
+    if orderInput == "A":
+        print("Here are your Chocolate Chip Cookies.")
+    elif orderInput == "E":
+        break
+    elif orderInput == "B":
+        print("Here are your Sugar Cookies.")
+    elif orderInput == "C":
+        print("Here are Sugar Free Cookies.")
+    elif orderInput == "D":
+        print("Here are Mint Chocolate Cookies.")
+    else:
+        print("We don't have those!")
+        
+print("Thank you, have a nice day!")
+
+
+
+Pizza = 10
+Lasagna = 15
+Spaghetti = 20
+
+def placeOrder(dishIWant,howManyIWant):
+    global Pizza,Lasagna, Spaghetti
+    if dishIWant == "Pizza":
+        if Pizza >= howManyIWant:
+            Pizza -= howManyIWant
+            print("Here are your "+str(howManyIWant)+" pizzas")
+        else:
+            print("We don't have enough pizza")
+    elif dishIWant == "Lasagna":
+        if Lasagna >= howManyIWant:
+            Lasagna -= howManyIWant
+            print("Here are your "+str(howManyIWant)+" lasagnas")
+        else:
+            print("We don't have enough lasagna")
+    elif dishIWant == "Spahetti":
+        if Spaghetti>= howManyIWant:
+            Spaghetti -= howManyIWant
+            print("Here are your "+str(howManyIWant)+" spaghettis")
+        else:
+            print("We don't have enough spaghetti")
+    else:
+        print("We don't have that item")
+        
+        
+placeOrder("Pizza",400)
