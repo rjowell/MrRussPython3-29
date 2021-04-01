@@ -1,0 +1,49 @@
+import random
+
+ComputerNumber = random.randint(0,10)
+
+gameMax = 5
+Win = False
+Play = True
+
+while Play == True:
+   while gameMax > 0:
+
+       print()
+       playerNumber = input("Enter a number between 0-10: ")
+       playerNumber = float(playerNumber)
+
+       if (playerNumber < 0 or playerNumber > 10):
+           print("Bad Number")
+           break
+       else:
+          if playerNumber > ComputerNumber:
+            print("Number too big")
+            gameMax = gameMax - 1
+            print("You have " + str(gameMax) + " tries left")
+            if playerNumber - ComputerNumber == 1:
+              print("1 number off")
+          elif (playerNumber < ComputerNumber):
+            print("Number too small")
+            gameMax = gameMax - 1
+            print("You have " + str(gameMax) + " tries left")
+            if ComputerNumber - playerNumber == 1:
+                print("1 number off")
+          else:
+                print("Correct")
+                Win = True
+                break
+             
+   if Win == True:
+       print("Congratulations! You won at " + str(4-gameMax) + " tries")
+   else:
+       print("No more tries")
+       print ("The number was: " + str(ComputerNumber))
+
+   answer = input("Do you want to play again? Y/N ")
+  
+   if answer.upper() == "N":
+       print("Okay! bye bye!")
+       Play = False
+   else:
+       win = False
