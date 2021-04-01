@@ -1,6 +1,24 @@
 import random
 
-ComputerNumber = random.randint(0,10)
+print("Welcome To The Number Guess Game!")
+
+lowNum = input("Enter your lower bound number")
+
+while lowNum.isnumeric() == False:
+  lowNum = input("Enter your lower bound number")
+
+lowNum = int(lowNum)
+
+hiNum = input("Enter your high bound number")
+
+while hiNum.isnumeric() == False:
+  hiNum = input("Enter your lower bound number")
+
+hiNum = int(hiNum)
+
+
+
+ComputerNumber = random.randint(lowNum,hiNum)
 
 gameMax = 5
 Win = False
@@ -10,10 +28,14 @@ while Play == True:
    while gameMax > 0:
 
        print()
-       playerNumber = input("Enter a number between 0-10: ")
+#Concatenate
+
+       playerNumber = input("Enter a number between "+str(lowNum)+" and "+str(hiNum)+": ")
+
+
        playerNumber = float(playerNumber)
 
-       if (playerNumber < 0 or playerNumber > 10):
+       if (playerNumber < lowNum or playerNumber > hiNum):
            print("Bad Number")
            break
        else:
